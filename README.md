@@ -1,0 +1,2 @@
+# my-synopsis
+ Vanilla JavaScript
