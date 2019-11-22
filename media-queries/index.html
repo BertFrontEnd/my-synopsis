@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="one">
+      <span>Blue</span>
+      <span>Red: </span>
+      <span>{ screen and (min-width: 400px) }</span>
+      <span id="one"></span>
+    </div>
+    <div class="two">
+      <span>Blue</span>
+      <span>Red:</span>
+      <span>{ (min-width: 400px) and (max-width: 600px) }</span>
+      <span id="two"></span>
+    </div>
+    <div class="three">
+      <span>Blue</span>
+      <span>Grey:</span>
+      <span>{ screen and (max-width: 800px) }</span>
+      <span>Green:</span>
+      <span>{ screen and (max-width: 700px) }</span>
+      <span>Orange:</span>
+      <span>{ screen and (max-width: 600px) }</span>
+      <span>Black:</span>
+      <span>{ screen and (max-width: 500px) }</span>
+      <span id="three"></span>
+    </div>
+    <div class="four">
+      <span>Blue</span>
+      <span>Aqua:</span>
+      <span>{ screen and (orientation: landscape) }</span>
+      <span id="fourW"></span>
+      <span id="fourH"></span>
+    </div>
+    <div class="five">
+      <span>Blue</span>
+      <span>Maroon:</span>
+      <span>{ (min-aspect-ratio: 1/4) and (max-aspect-ratio: 1/2) }</span>
+      <span id="fiveW"></span>
+      <span id="fiveH"></span>
+      <span id="fiveD"></span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

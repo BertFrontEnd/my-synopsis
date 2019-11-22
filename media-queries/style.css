@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin: 10px;
+  padding: 15px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+span:first-child {
+  text-align: right;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five {
+  width: 350px;
+  border-radius: 5px;
+  background-color: blue;
+}
+
+@media screen and (min-width: 400px) {
+  .one {
+    background-color: red;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  .two {
+    background-color: red;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .three {
+    background-color: grey;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .three {
+    background-color: green;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .three {
+    background-color: orange;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .three {
+    background-color: black;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .four {
+    background-color: purple;
+  }
+}
+
+@media screen and (min-aspect-ratio: 1/4) and (max-aspect-ratio: 1/2) {
+  .five {
+    background-color: maroon;
+  }
+}
