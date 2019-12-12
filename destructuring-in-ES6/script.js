@@ -66,25 +66,84 @@ console.log('');
 //
 //
 //
-// 04. Деструктуризация объекта:
-console.log('04. Деструктуризация объекта:');
+// 05. Деструктуризация объекта:
+console.log('05. Деструктуризация объекта:');
 console.log('');
 
-console.log(`const dog = {
+console.log(`const dogOne = {
   name: 'Max',
   color: 'brown',
   legs: 4
 };
-const {name, color} = dog;`);
+const {name, color} = dogOne;`);
 console.log(`console.log(color);`);
 console.log('');
 
-const dog = {
+const dogOne = {
   name: 'Max',
   color: 'brown',
   legs: 4,
 };
-const { name, color } = dog;
+const { name, color } = dogOne;
 console.log(`Результат деструктуризации объекта:`);
 console.log(color); // Выведет: 'brown'. Переменная, установленная для деструктурированного свойства, должна быть такая же, как имя свойства на исходном объекте, так что если использовать отличное имя переменной, то результат будет 'undefined'.
 console.log('');
+//
+//
+//
+// 06. Назначение параметра и его значения объекта по умолчанию:
+console.log('06. Назначение параметра и его значения объекта по умолчанию:');
+console.log('');
+
+console.log(`const dogTwo = {
+  name: 'Max',
+  color: 'brown',
+  legs: 4
+}
+const {owner = 'Steve'} = dogTwo;`);
+console.log(`console.log(owner);`);
+console.log('');
+
+const dogTwo = {
+  name: 'Max',
+  color: 'brown',
+  legs: 4,
+};
+const { owner = 'Steve' } = dogTwo;
+console.log(
+  `Результат назначения параметра и его значения объекта по умолчанию:`
+);
+console.log(owner); // Выведет: 'Steve'
+console.log('');
+//
+//
+//
+// 07. Замена имени параметра объекта:
+console.log('07. Замена имени параметра объекта:');
+console.log('');
+
+console.log(`const dogThree = {
+  name: 'Max',
+  color: 'brown',
+  legs: 4
+}
+const {owner = 'Steve', legs : paws} = dogThree;`);
+console.log(`console.log(paws);`);
+console.log(`console.log(legs);`);
+console.log('');
+
+const dogThree = {
+  name: 'Max',
+  color: 'brown',
+  legs: 4,
+};
+const { owner = 'Steve', legs: paws } = dogThree;
+console.log(
+  `Результат назначения параметра и его значения объекта по умолчанию:`
+);
+console.log(paws); // Выведет: '4'. Для изменения имени параметра объекта необходимо добавить двоеточие и имя переменной (псевдонима).
+console.log(legs); // Выведет: 'reference error, undefined'. При изменении имени параметра объекта, она перестает сущестовать.
+console.log('');
+//
+//
+//
