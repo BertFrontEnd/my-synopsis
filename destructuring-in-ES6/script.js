@@ -100,7 +100,7 @@ console.log(`const dogTwo = {
   color: 'brown',
   legs: 4
 }
-const {owner = 'Steve'} = dogTwo;`);
+const {ownerTwo = 'Steve'} = dogTwo;`);
 console.log(`console.log(owner);`);
 console.log('');
 
@@ -109,41 +109,61 @@ const dogTwo = {
   color: 'brown',
   legs: 4,
 };
-const { owner = 'Steve' } = dogTwo;
+const { ownerTwo = 'Steve' } = dogTwo;
 console.log(
   `Результат назначения параметра и его значения объекта по умолчанию:`
 );
-console.log(owner); // Выведет: 'Steve'
+console.log(ownerTwo); // Выведет: 'Steve'
 console.log('');
 //
 //
 //
-// 07. Замена имени параметра объекта:
-console.log('07. Замена имени параметра объекта:');
+// 07. Замена имени параметра объекта псевдонимом:
+console.log('07. Замена имени параметра объекта псевдонимом:');
 console.log('');
 
 console.log(`const dogThree = {
   name: 'Max',
   color: 'brown',
-  legs: 4
+  legsThree: 4
 }
-const {owner = 'Steve', legs : paws} = dogThree;`);
-console.log(`console.log(paws);`);
-console.log(`console.log(legs);`);
+const {ownerThree = 'Steve', legsThree: pawsThree} = dogThree;`);
+console.log(`console.log(pawsThree);`);
+console.log(`console.log(legsThree);`);
 console.log('');
 
 const dogThree = {
   name: 'Max',
   color: 'brown',
-  legs: 4,
+  legsThree: 4,
 };
-const { owner = 'Steve', legs: paws } = dogThree;
-console.log(
-  `Результат назначения параметра и его значения объекта по умолчанию:`
-);
-console.log(paws); // Выведет: '4'. Для изменения имени параметра объекта необходимо добавить двоеточие и имя переменной (псевдонима).
-console.log(legs); // Выведет: 'reference error, undefined'. При изменении имени параметра объекта, она перестает сущестовать.
+const { ownerThree = 'Steve', legsThree: pawsThree } = dogThree;
+console.log(`Результат замены имени параметра объекта псевдонимом:`);
+console.log(pawsThree); // Выведет: '4'. Для изменения имени параметра объекта необходимо добавить двоеточие и имя переменной (псевдонима).
+// console.log(legsThree); // Выведет: 'reference error, undefined'. При изменении имени параметра объекта, он перестает существовать.
 console.log('');
 //
 //
 //
+// 08. Присваивание значения псевдониму по умолчанию:
+console.log('08. Присваивание значения псевдониму по умолчанию:');
+console.log('');
+
+console.log(`const dogFour = {
+  name: 'Max',
+  color: 'brown',
+  legsFour: undefined
+}
+const {ownerFour = 'Steve', legsFour: pawsFour = 4} = dogFour;`);
+console.log(`console.log(pawsFour);`);
+console.log('');
+
+const dogFour = {
+  name: 'Max',
+  color: 'brown',
+  legsFour: undefined,
+};
+const { ownerFour = 'Steve', legsFour: pawsFour = 4 } = dogFour;
+console.log(`Результат присваивания значения псевдониму по умолчанию:`);
+console.log(pawsFour); // Выведет: '4'. Можно присвоить псевдониму значение по умолчанию на тот случай, если исходная переменная не существует или не определена. Присваивать значение необходимо после установки имени псевдонима.
+console.log('');
