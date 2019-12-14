@@ -167,3 +167,28 @@ const { ownerFour = 'Steve', legsFour: pawsFour = 4 } = dogFour;
 console.log(`Результат присваивания значения псевдониму по умолчанию:`);
 console.log(pawsFour); // Выведет: '4'. Можно присвоить псевдониму значение по умолчанию на тот случай, если исходная переменная не существует или не определена. Присваивать значение необходимо после установки имени псевдонима.
 console.log('');
+//
+//
+//
+// 09. Сохранение оставшихся элементов в другом объекте:
+console.log('08. Сохранение оставшихся элементов в другом объекте:');
+console.log('');
+
+console.log(`const dogFive = {
+  name: 'Max',
+  colorFive: 'brown',
+  legsFive: 4
+}
+const {colorFive, ...rest} = dogFive;`);
+console.log(`console.log(rest);`);
+console.log('');
+
+const dogFive = {
+  name: 'Max',
+  colorFive: 'brown',
+  legsFive: 4
+};
+const { colorFive, ...rest } = dogFive;
+console.log(`Результат сохранения оставшихся элементов в другом объекте:`);
+console.log(rest); // Выведет: '["spanish", "italian", "swahili"]', используя оператор rest ...
+console.log('');
