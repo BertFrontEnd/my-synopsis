@@ -61,7 +61,7 @@ console.log('');
 const languages = ['french', 'spanish', 'italian', 'swahili'];
 const countries = ([swahili, ...remainingLanguages] = languages);
 console.log(`Результат сохранения оставшихся элементов в другом массиве:`);
-console.log(remainingLanguages); // Выведет: '["spanish", "italian", "swahili"]', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей скобкой
+console.log(remainingLanguages); // Выведет: '["spanish", "italian", "swahili"]', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей скобкой.
 console.log('');
 //
 //
@@ -186,9 +186,40 @@ console.log('');
 const dogFive = {
   name: 'Max',
   colorFive: 'brown',
-  legsFive: 4
+  legsFive: 4,
 };
 const { colorFive, ...rest } = dogFive;
 console.log(`Результат сохранения оставшихся элементов в другом объекте:`);
-console.log(rest); // Выведет: '{name: "Max", legs: 4}', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей фигурной скобкой
+console.log(rest); // Выведет: '{name: "Max", legs: 4}', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей фигурной скобкой.
+console.log('');
+//
+//
+//
+// 10. Деструктуризация параметров функции:
+console.log('10. Деструктуризация параметров функции:');
+console.log('');
+
+console.log(`const man = {
+  name: 'Johny',
+  age: 50,
+  hairColor: 'black'
+}`);
+console.log(`function getName({name}){
+  return name;
+}`);
+console.log(`getName(man);`);
+console.log(`getName({name: 'Sandy', age:24});`);
+console.log('');
+
+const man = {
+  name: 'Johny',
+  age: 50,
+  hairColor: 'black',
+};
+function getName({ name }) {
+  return name;
+}
+console.log(`Результат деструктуризации параметров функции:`);
+console.log(getName(man)); //  Выведет: 'Johny'.
+console.log(getName({ name: 'Sandy', age: 24 })); //  Выведет: 'Sandy.' Имя ключа (параметра), который нужно деструктурировать, должно совпадать с именем переменной - псевдонимом, которая используется, чтобы изменить значение самого параметра.
 console.log('');
