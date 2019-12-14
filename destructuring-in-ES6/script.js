@@ -61,7 +61,7 @@ console.log('');
 const languages = ['french', 'spanish', 'italian', 'swahili'];
 const countries = ([swahili, ...remainingLanguages] = languages);
 console.log(`Результат сохранения оставшихся элементов в другом массиве:`);
-console.log(remainingLanguages); // Выведет: '["spanish", "italian", "swahili"]', используя оператор rest ...
+console.log(remainingLanguages); // Выведет: '["spanish", "italian", "swahili"]', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей скобкой
 console.log('');
 //
 //
@@ -190,5 +190,5 @@ const dogFive = {
 };
 const { colorFive, ...rest } = dogFive;
 console.log(`Результат сохранения оставшихся элементов в другом объекте:`);
-console.log(rest); // Выведет: '["spanish", "italian", "swahili"]', используя оператор rest ...
+console.log(rest); // Выведет: '{name: "Max", legs: 4}', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей фигурной скобкой
 console.log('');
