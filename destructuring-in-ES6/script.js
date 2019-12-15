@@ -195,8 +195,8 @@ console.log('');
 //
 //
 //
-// 10. Деструктуризация параметров функции:
-console.log('10. Деструктуризация параметров функции:');
+// 10. Деструктуризация параметра (параметр - объект) функции:
+console.log('10. Деструктуризация параметра (параметр - объект) функции:');
 console.log('');
 
 console.log(`const man = {
@@ -219,7 +219,28 @@ const man = {
 function getName({ name }) {
   return name;
 }
-console.log(`Результат деструктуризации параметров функции:`);
+console.log(`Результат деструктуризации параметра функции:`);
 console.log(getName(man)); //  Выведет: 'Johny'.
 console.log(getName({ name: 'Sandy', age: 24 })); //  Выведет: 'Sandy.' Имя ключа (параметра), который нужно деструктурировать, должно совпадать с именем переменной - псевдонимом, которая используется, чтобы изменить значение самого параметра.
+console.log('');
+//
+//
+//
+// 11. Деструктуризация параметра (параметр - массив) функции:
+console.log('11. Деструктуризация параметра (параметр - массив) функции:');
+console.log('');
+
+console.log(`const friends= ['Mike', 'Bill', 'Jill', 'Max'];`);
+console.log(`function getBestFriend ([friendOne]){
+return friendOne;
+}`);
+console.log(`getBestFriend(friends);`);
+console.log('');
+
+const friends = ['Mike', 'Bill', 'Jill', 'Max'];
+function getBestFriend([friendOne, friendTwo, friendThree, friendFour]) {
+  return friendThree;
+}
+console.log(`Результат деструктуризации параметра функции:`);
+console.log(getBestFriend(friends)); //  Выведет: 'Jill'.  В передаче параметра(-ов) происходит присваивание переменной соответствующему индексу элемента в исходном массиве, и затем выводится то значение переменной, которую необходимо вернуть из условия тела функции.
 console.log('');
