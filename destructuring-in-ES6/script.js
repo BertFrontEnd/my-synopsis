@@ -244,3 +244,27 @@ function getBestFriend([friendOne, friendTwo, friendThree, friendFour]) {
 console.log(`Результат деструктуризации параметра функции:`);
 console.log(getBestFriend(friends)); //  Выведет: 'Jill'.  В передаче параметра(-ов) происходит присваивание переменной соответствующему индексу элемента в исходном массиве, и затем выводится то значение переменной, которую необходимо вернуть из условия тела функции.
 console.log('');
+//
+//
+//
+// 12. Назначение оставшихся элементов другой переменной:
+console.log('12. Назначение оставшихся элементов другой переменной:');
+console.log('');
+
+console.log(`const friendsNew = ['Mike', 'Bill', 'Jill', 'Max'];`);
+console.log(`function getBestFriendNew([friendOne, ...overFriends]) {
+  return overFriends;
+}`);
+console.log(`getBestFriendNew(friendsNew);`);
+console.log('');
+
+const friendsNew = ['Mike', 'Bill', 'Jill', 'Max'];
+function getBestFriendNew([friendOne, ...overFriends]) {
+  return overFriends;
+}
+console.log(`Результат назначения оставшихся элементов другой переменной:`);
+console.log(getBestFriendNew(friendsNew)); // Выведет: '["Bill", "Jill", "Max"]', используя оператор rest '...'. Эту технику следует использовать непосредственно перед закрывающей скобкой.
+console.log('');
+//
+//
+//
