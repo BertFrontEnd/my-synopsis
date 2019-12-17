@@ -268,3 +268,57 @@ console.log('');
 //
 //
 //
+// 13. Разрушение вложенного объекта:
+console.log('13. Разрушение вложенного объекта:');
+console.log('');
+
+console.log(`const user = {
+  name: 'Naira Marley',
+  age: 12,
+  socialMedia: {
+    twitter: '@officialnairam1'
+  }
+}`);
+console.log(`function getTwitter({ socialMedia:{twitter} }){
+  return twitter;
+}`);
+console.log(`getTwitter(user);`);
+console.log('');
+
+const user = {
+  name: 'Naira Marley',
+  age: 12,
+  socialMedia: {
+    twitter: '@officialnairam1',
+  },
+};
+function getTwitter({ socialMedia: { twitter } }) {
+  return twitter;
+}
+console.log(`Результат разрушения вложенного объекта:`);
+console.log(getTwitter(user)); // Выведет: '@officialnairam1'.
+console.log('');
+//
+//
+//
+// 14. Разрушение вложенного массива:
+console.log('14. Разрушение вложенного массива:');
+console.log('');
+
+console.log(`const colours = ['#000000', [255, 0, 0] , '#ffffff'];`);
+console.log(`function getRed([hex_black, [rgb_red, ,], hex_white]){
+  return rgb_red;
+}`);
+console.log(`getRed(colours);`);
+console.log('');
+
+const colours = ['#000000', [255, 0, 0], '#ffffff'];
+function getRed([hex_black, [rgb_red, ,], hex_white]) {
+  return rgb_red;
+}
+console.log(`Результат разрушения вложенного объекта:`);
+console.log(getRed(colours)); // Выведет: '250'.
+console.log('');
+//
+//
+//
