@@ -322,3 +322,52 @@ console.log('');
 //
 //
 //
+// 15. Объявление переменных перед использованием в массивах:
+console.log('15. Объявление переменных перед использованием в массивах:');
+console.log('');
+
+console.log(`let whiteOne, blackOne, greenOne, yellowOne;`);
+console.log(
+  `[whiteOne, blackOne, greenOne, yellowOne] = ['#ffffff', '#000000','#1ed947', '#fff829'];`
+);
+console.log(`console.log(greenOne);`);
+console.log('');
+
+let whiteOne, blackOne, greenOne, yellowOne;
+[whiteOne, blackOne, greenOne, yellowOne] = [
+  '#ffffff',
+  '#000000',
+  '#1ed947',
+  '#fff829',
+];
+console.log(`Результат объявления переменных перед использованием в массивах:`);
+console.log(greenOne); // Выведет: '#1ed947'.
+console.log('');
+//
+//
+//
+// 16. Объявление переменных перед использованием в массивах с использованием значения по умолчанию:
+console.log(
+  '16. Объявление переменных перед использованием в массивах с использованием значения по умолчанию:'
+);
+console.log('');
+
+console.log(`let whiteTwo, blackTwo, greenTwo;`);
+console.log(`let yellowTwo = 'yellowTwo';`);
+console.log(
+  `[whiteTwo, blackTwo, greenTwo] = ['#ffffff', '#000000','#1ed947', '#fff829'];`
+);
+console.log(`console.log(yellowTwo);`);
+console.log('');
+
+let whiteTwo, blackTwo, greenTwo;
+let yellowTwo = 'yellowTwoVar';
+[whiteTwo, blackTwo, greenTwo] = ['#ffffff', '#000000', '#1ed947', '#fff829'];
+console.log(
+  `Результат объявления переменных перед использованием в массивах с использованием значения по умолчанию:`
+);
+console.log(yellowTwo); // Выведет: 'yellowTwoVar'.
+console.log('');
+//
+//
+//
