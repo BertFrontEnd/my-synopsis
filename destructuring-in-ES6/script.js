@@ -86,7 +86,7 @@ const dogOne = {
 };
 const { name, color } = dogOne;
 console.log(`Результат деструктуризации объекта:`);
-console.log(color); // Выведет: 'brown'. Переменная, установленная для деструктурированного свойства, должна быть такая же, как имя свойства на исходном объекте, так что если использовать отличное имя переменной, то результат будет 'undefined'.
+console.log(color); // Выведет: 'brown'. Переменная, установленная для деструктурированного свойства, должна быть такая же, как имя свойства на исходном объекте, иначе, если использовать отличное имя переменной, результат будет 'undefined'.
 console.log('');
 //
 //
@@ -371,3 +371,61 @@ console.log('');
 //
 //
 //
+// 17. Объявление переменных перед использованием в объектах:
+console.log('17. Объявление переменных перед использованием в объектах:');
+console.log('');
+
+console.log(`let firstName = 'Post';`);
+console.log(`let lastName = 'Malone';`);
+console.log(`let country = 'U.S.A';`);
+console.log(`let firstName, lastName, country;`);
+console.log(`let user = {
+  firstName: 'Zlatan',
+  lastName: 'Ibile',
+  country: 'Nigeria'
+};`);
+console.log(`({ firstName, lastName, country } = user)`);
+console.log(`console.log(firstName);`);
+console.log('');
+
+let firstNameObj = 'Post';
+let lastNameObj = 'Malone';
+let countryObj = 'U.S.A';
+let firstName, lastName, country;
+let userObj = {
+  firstNameObj: 'Zlatan',
+  lastNameObj: 'Ibile',
+  countryObj: 'Nigeria',
+};
+({ firstNameObj, lastNameObj, countryObj } = userObj);
+console.log(`Результат объявления переменных перед использованием в объектах:`);
+console.log(firstNameObj); // Выведет: 'Zlatan'. В данном коде используются круглые скобки “()”. Если это не сделать, JavaScript увидит эту стоку как выражение блока, что приведет к ошибке, т.к. блоки кода не появляются в левой части присваивания.
+console.log('');
+//
+//
+//
+// 18. Смешанная деструктуризация:
+console.log('18. Смешанная деструктуризация:');
+console.log('');
+
+console.log(`const user = {
+  name: 'Janet',
+  age: 23,
+  sports: ['basketball', 'hockey', 'soccer']
+}`);
+console.log(`const {name, sports: [firstSport, , lastSport]} = user;`);
+console.log(`console.log(firstSport);`);
+console.log('');
+
+const userMixed = {
+  nameMixed: 'Janet',
+  ageMixed: 23,
+  sportsMixed: ['basketball', 'hockey', 'soccer'],
+};
+const {
+  nameMixed,
+  sportsMixed: [firstSportMixed, , lastSportMixed],
+} = userMixed;
+console.log(`Результат объявления переменных перед использованием в объектах:`);
+console.log(nameMixed); // Выведет: 'basketball'.
+console.log('');
