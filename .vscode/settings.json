@@ -1,3 +1,4 @@
 {
     "prettier.singleQuote": true,
+    "files.autoSave": "onFocusChange",
 }
