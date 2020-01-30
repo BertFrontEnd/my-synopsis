@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to top left, #74b9ff, #a29bfe);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#axis {
+  border: 5px solid #f7f7f7;
+  height: 450px;
+  width: 450px;
+  margin-top: 30px;
+  position: relative;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+
+  &.one {
+    background-image: url('assets/axis-1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.two {
+    background-image: url('assets/axis-2.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.three {
+    background-image: url('assets/axis-3.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .object {
+    position: absolute;
+  }
+
+  .van-to-right {
+    width: 100px;
+    top: 40%;
+    left: 37%;
+  }
+
+  .van-to-left {
+    width: 100px;
+    top: 40%;
+    left: 41%;
+  }
+
+  .rocket {
+    width: 60px;
+    top: 40%;
+    left: 44%;
+  }
+}
