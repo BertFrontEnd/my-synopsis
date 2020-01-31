@@ -1,2 +1,2 @@
 # my-synopsis
- Vanilla JavaScript
+ JavaScript & CSS
