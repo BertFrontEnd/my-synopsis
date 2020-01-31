@@ -19,10 +19,11 @@ body {
 
 #axis {
   border: 5px solid #f7f7f7;
-  height: 450px;
-  width: 450px;
+  height: 850px;
+  width: 850px;
   margin-top: 30px;
   position: relative;
+  cursor: pointer;
   -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 }
@@ -45,25 +46,138 @@ body {
   background-size: contain;
 }
 
+#axis.four {
+  background-image: url("assets/axis-4.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#axis.five {
+  background-image: url("assets/axis-5.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#axis.six {
+  background-image: url("assets/axis-6-cw.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#axis.seven {
+  background-image: url("assets/axis-7-ccw.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#axis.eight {
+  background-image: url("assets/axis-8-scale.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#axis.default {
+  background-image: url("assets/axis.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 #axis .object {
   position: absolute;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
 }
 
 #axis .van-to-right {
-  width: 100px;
-  top: 40%;
+  width: 150px;
+  top: 42%;
   left: 37%;
 }
 
 #axis .van-to-left {
-  width: 100px;
-  top: 40%;
-  left: 41%;
+  width: 150px;
+  top: 42%;
+  left: 46%;
 }
 
 #axis .rocket {
-  width: 60px;
-  top: 40%;
-  left: 44%;
+  width: 80px;
+  top: 45%;
+  left: 46%;
+}
+
+#axis .coin {
+  width: 80px;
+  top: 45%;
+  left: 45%;
+}
+
+#axis .plane {
+  width: 90px;
+  top: 48%;
+  left: 42%;
+}
+
+#axis .pencil {
+  width: 70px;
+  top: 41%;
+  left: 46%;
+}
+
+#axis .car {
+  width: 110px;
+  top: 44%;
+  left: 43%;
+}
+
+#axis .boomerang {
+  width: 110px;
+  top: 44%;
+  left: 42%;
+}
+
+#axis:hover .move-right {
+  -webkit-transform: translateX(350px);
+          transform: translateX(350px);
+}
+
+#axis:hover .move-left {
+  -webkit-transform: translateX(-350px);
+          transform: translateX(-350px);
+}
+
+#axis:hover .move-up {
+  -webkit-transform: translateY(-350px);
+          transform: translateY(-350px);
+}
+
+#axis:hover .move-down {
+  -webkit-transform: translateY(350px);
+          transform: translateY(350px);
+}
+
+#axis:hover .move-ne {
+  -webkit-transform: translate(350px, -350px);
+          transform: translate(350px, -350px);
+}
+
+#axis:hover .rotate360cw {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+#axis:hover .rotate360ccw {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+#axis:hover .scale {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+#axis:hover .multiple-move {
+  -webkit-transform: translate(350px, -350px) rotate(-720deg);
+          transform: translate(350px, -350px) rotate(-720deg);
 }
 /*# sourceMappingURL=style.css.map */

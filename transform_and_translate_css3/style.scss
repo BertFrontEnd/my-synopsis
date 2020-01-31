@@ -12,10 +12,11 @@ body {
 
 #axis {
   border: 5px solid #f7f7f7;
-  height: 450px;
-  width: 450px;
+  height: 850px;
+  width: 850px;
   margin-top: 30px;
   position: relative;
+  cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 
   &.one {
@@ -36,25 +37,128 @@ body {
     background-size: contain;
   }
 
+  &.four {
+    background-image: url('assets/axis-4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.five {
+    background-image: url('assets/axis-5.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.six {
+    background-image: url('assets/axis-6-cw.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.seven {
+    background-image: url('assets/axis-7-ccw.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.eight {
+    background-image: url('assets/axis-8-scale.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.default {
+    background-image: url('assets/axis.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
   .object {
     position: absolute;
+    transition: all 2s ease;
   }
 
   .van-to-right {
-    width: 100px;
-    top: 40%;
+    width: 150px;
+    top: 42%;
     left: 37%;
   }
 
   .van-to-left {
-    width: 100px;
-    top: 40%;
-    left: 41%;
+    width: 150px;
+    top: 42%;
+    left: 46%;
   }
 
   .rocket {
-    width: 60px;
-    top: 40%;
-    left: 44%;
+    width: 80px;
+    top: 45%;
+    left: 46%;
+  }
+
+  .coin {
+    width: 80px;
+    top: 45%;
+    left: 45%;
+  }
+
+  .plane {
+    width: 90px;
+    top: 48%;
+    left: 42%;
+  }
+
+  .pencil {
+    width: 70px;
+    top: 41%;
+    left: 46%;
+  }
+
+  .car {
+    width: 110px;
+    top: 44%;
+    left: 43%;
+  }
+
+  .boomerang {
+    width: 110px;
+    top: 44%;
+    left: 42%;
+  }
+
+  &:hover .move-right {
+    transform: translateX(350px);
+  }
+
+  &:hover .move-left {
+    transform: translateX(-350px);
+  }
+
+  &:hover .move-up {
+    transform: translateY(-350px);
+  }
+
+  &:hover .move-down {
+    transform: translateY(350px);
+  }
+
+  &:hover .move-ne {
+    transform: translate(350px, -350px);
+  }
+
+  &:hover .rotate360cw {
+    transform: rotate(360deg);
+  }
+
+  &:hover .rotate360ccw {
+    transform: rotate(-360deg);
+  }
+
+  &:hover .scale {
+    transform: scale(2);
+  }
+
+  &:hover .multiple-move {
+    transform: translate(350px, -350px) rotate(-720deg);
   }
 }
