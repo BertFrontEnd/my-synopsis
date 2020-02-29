@@ -1,5 +1,6 @@
 {
-    "prettier.singleQuote": true,
-    "files.autoSave": "onFocusChange",
-    "editor.wordWrap": "on",
+  "prettier.singleQuote": true,
+  "files.autoSave": "onFocusChange",
+  "editor.wordWrap": "on",
+  "cSpell.words": ["Sergey"]
 }
