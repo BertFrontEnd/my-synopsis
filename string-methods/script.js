@@ -60,7 +60,7 @@ console.log(newStr5_5);
 console.log('');
 
 
-// 06. Получение подстроки м "substr"
+// 06. Получение подстроки с помощью метода "substr"
 console.log('06. Получение подстроки с помощью метода "substr"');
 let str6 = "Hello, not a perfect World!";
 console.log(str6);

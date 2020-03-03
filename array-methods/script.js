@@ -68,8 +68,8 @@ console.log(newArr7); // Возвращает новый МАССИВ, в кот
 console.log(arr7); // Исходный МАССИВ не мутирует
 console.log('');
 
-// 05. Сложение "concat"
-console.log('05. Сложение "concat"');
+// 08. Сложение "concat"
+console.log('08. Сложение "concat"');
 let arr9 = [1, 2, 3, 4, 5];
 console.log(arr9);
 let newArr9 = arr9.concat(
