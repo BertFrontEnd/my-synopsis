@@ -1,0 +1,80 @@
+body {
+  background-color: honeydew;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+
+  fieldset {
+    width: 100%;
+    max-width: 80vw;
+    margin: 0 auto 20px auto;
+    /*     margin-bottom: 20px; */
+    text-shadow: 0.05em 0.05em teal;
+    border: solid 1px mediumturquoise;
+    color: mediumturquoise;
+
+    div {
+      position: relative;
+      height: 2.5em;
+      margin: 1.5em 1em;
+      padding: 0.2em;
+      border: 1px solid mediumturquoise;
+      border-radius: 5px;
+      font-size: 1.2em;
+
+      &::before {
+        content: attr(data-content);
+        position: absolute;
+        display: inline-block;
+        left: 0.2em;
+        width: 6em;
+        height: 2em;
+        padding: 0.2em;
+        border-radius: 3px;
+        background-color: mediumturquoise;
+        line-height: 1.6em;
+        text-shadow: 0.05em 0.05em teal;
+        text-align: center;
+        text-transform: capitalize;
+        color: #fff;
+      }
+    }
+
+    .from-to::before {
+      animation: timing-from-to 5s infinite alternate;
+    }
+    .percents::before {
+      animation: timing-percents 5s infinite alternate;
+    }
+  }
+}
+
+@keyframes timing-from-to {
+  from {
+    background-color: steelblue;
+  }
+  to {
+    left: 100%;
+    margin-left: -6.2em;
+  }
+}
+
+@keyframes timing-percents {
+  20% {
+    animation-timing-function: ease-in;
+  }
+  40% {
+    left: 40%;
+    background: yellowgreen;
+    animation-timing-function: ease-out;
+  }
+  60% {
+    left: 60%;
+    background: gold;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    left: 100%;
+    margin-left: -6.2em;
+    background: crimson;
+  }
+}
