@@ -5,9 +5,8 @@ body {
 
   fieldset {
     width: 100%;
-    max-width: 80vw;
+    max-width: 900vw;
     margin: 0 auto 20px auto;
-    /* text-shadow: 0.05em 0.05em teal; */
     border: solid 1px mediumturquoise;
     font-weight: 600;
     color: mediumturquoise;
@@ -29,11 +28,12 @@ body {
         position: absolute;
         display: inline-block;
         left: 0.2em;
-        width: 6em;
+        width: 12em;
         height: 2em;
         padding: 0.2em;
         border-radius: 3px;
         background-color: mediumturquoise;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
         line-height: 1.6em;
         text-shadow: 0.05em 0.05em teal;
         text-align: center;
@@ -47,10 +47,14 @@ body {
         animation-play-state: paused;
       }
     }
+
+    span {
+      text-decoration: underline;
+    }
   }
 }
 
-/* Steps */
+/* Keywords */
 
 @keyframes timing-from-to {
   from {
@@ -58,7 +62,7 @@ body {
   }
   to {
     left: 100%;
-    margin-left: -6.2em;
+    margin-left: -12.2em;
   }
 }
 
@@ -78,7 +82,7 @@ body {
   }
   100% {
     left: 100%;
-    margin-left: -6.2em;
+    margin-left: -12.2em;
     background: crimson;
   }
 }
@@ -99,12 +103,12 @@ body {
   }
 }
 
-/* Animation-timing-function */
+/* Animation Timing Function */
 
 @keyframes timing {
   50% {
     left: 100%;
-    margin-left: -6.2em;
+    margin-left: -12.2em;
   }
 }
 
@@ -150,5 +154,137 @@ body {
   &::before {
     animation: timing 5s infinite;
     animation-timing-function: ease-in-out;
+  }
+}
+
+/* Cubic Bezier */
+
+@keyframes cubic {
+  50% {
+    left: 100%;
+    margin-left: -12.2em;
+  }
+}
+
+.cubic-bezier {
+  font-weight: 300;
+
+  &::before {
+    animation: cubic 5s infinite;
+    animation-timing-function: cubic-bezier(0.24, 1.49, 0.29, -0.48);
+  }
+}
+
+/* Step start & Step end */
+
+.step {
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 10em/1 Times;
+
+    span {
+      &::before,
+      &::after {
+        content: '0123456789';
+        display: inline-block;
+        width: 0.5em;
+        margin: 0.1em auto 0;
+        overflow: hidden;
+        animation: step 10s infinite step-end;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      }
+
+      &::before {
+        animation-duration: 100s;
+      }
+    }
+
+    &:hover {
+      & span::before,
+      span::after {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+@keyframes step {
+  10% {
+    text-indent: -0.5em;
+  }
+  20% {
+    text-indent: -1em;
+  }
+  30% {
+    text-indent: -1.5em;
+  }
+  40% {
+    text-indent: -2em;
+  }
+  50% {
+    text-indent: -2.5em;
+  }
+  60% {
+    text-indent: -3em;
+  }
+  70% {
+    text-indent: -3.5em;
+  }
+  80% {
+    text-indent: -4em;
+  }
+  90% {
+    text-indent: -4.5em;
+  }
+}
+
+/* Steps */
+
+.steps {
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+
+    span {
+      position: relative;
+      width: 5em;
+      height: 5em;
+      margin: 1em auto;
+      border: 0.2em solid mediumturquoise;
+      border-radius: 50%;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      font-size: 1.2em;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 0.1em;
+        height: 2.1em;
+        left: 2.3em;
+        top: 0.2em;
+        background-color: mediumturquoise;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        animation: steps 60s infinite steps(60);
+        transform-origin: 0 2.1em;
+      }
+    }
+
+    &:hover {
+      & span::before,
+      span::after {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+@keyframes steps {
+  100% {
+    transform: rotate(360deg);
   }
 }

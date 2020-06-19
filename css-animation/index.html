@@ -10,31 +10,73 @@
 
   <body>
     <fieldset>
-      <legend>From to & Percents</legend>
+      <legend>from to & percents</legend>
       <div data-content="From to" class="from-to">
-        Начальное и конечное положения
+        Начальное <span>from</span> и конечное <span>to</span> положения
       </div>
-      <div data-content="Percents" class="percents">Проценты</div>
+      <div data-content="Percents" class="percents">
+        Проценты <span>%</span>
+      </div>
     </fieldset>
 
     <fieldset>
-      <legend>Animation-timing-function</legend>
+      <legend>animation-timing-function</legend>
       <div data-content="Ease" class="ease">
-        Скольжение (значение по умолчанию)
+        Скольжение в середине по умолчанию <span>ease</span>
       </div>
       <div data-content="Linear" class="linear">
-        Ровное движение
+        Ровное движение <span>linear</span>
       </div>
       <div data-content="Ease in" class="ease-in">
-        Ускорение к концу
+        Ускорение к концу <span>ease-in</span>
       </div>
-      </div>
+
       <div data-content="Ease out" class="ease-out">
-        Ускорение в начале
+        Ускорение в начале <span>ease-out</span>
       </div>
       <div data-content="Ease in out" class="ease-in-out">
-        Ускорение в середине
+        Более плавное скольжение в середине <span>ease-in-out</span>
       </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>cubic-bezier</legend>
+      <div data-content="Linear" class="linear">
+        <span>linear</span>
+      </div>
+      <div data-content="Cubic" class="cubic-bezier">
+        <span>cubic-bezier(0.24, 1.49, 0.29, -0.48)</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>animation-direction</legend>
+      <div data-content="Normal" class="normal">
+        Анимация проигрывается с начала и до конца
+      </div>
+      <div data-content="Reverse" class="reverse">
+        Анимация проигрывается с конца
+      </div>
+      <div data-content="Alternate" class="alternate">
+        Анимация проигрывается с начала и до конца, и в обратном направлении
+      </div>
+      <div data-content="Alternate-reverse" class="alternate-reverse">
+        Анимация проигрывается с конца и до конца, и в обратном направлении
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend>step-start & step-end</legend>
+      <section>
+        <span></span>
+      </section>
+    </fieldset>
+
+    <fieldset class="steps">
+      <legend>steps</legend>
+      <section>
+        <span></span>
+      </section>
     </fieldset>
   </body>
 </html>
