@@ -7,19 +7,22 @@ body {
     width: 100%;
     max-width: 80vw;
     margin: 0 auto 20px auto;
-    /*     margin-bottom: 20px; */
-    text-shadow: 0.05em 0.05em teal;
+    /* text-shadow: 0.05em 0.05em teal; */
     border: solid 1px mediumturquoise;
+    font-weight: 600;
     color: mediumturquoise;
+    cursor: pointer;
 
     div {
       position: relative;
       height: 2.5em;
-      margin: 1.5em 1em;
+      margin: 1em;
       padding: 0.2em;
       border: 1px solid mediumturquoise;
       border-radius: 5px;
       font-size: 1.2em;
+      line-height: 1.9em;
+      text-align: center;
 
       &::before {
         content: attr(data-content);
@@ -39,14 +42,15 @@ body {
       }
     }
 
-    .from-to::before {
-      animation: timing-from-to 5s infinite alternate;
-    }
-    .percents::before {
-      animation: timing-percents 5s infinite alternate;
+    &:hover {
+      & div::before {
+        animation-play-state: paused;
+      }
     }
   }
 }
+
+/* Steps */
 
 @keyframes timing-from-to {
   from {
@@ -76,5 +80,75 @@ body {
     left: 100%;
     margin-left: -6.2em;
     background: crimson;
+  }
+}
+
+.from-to {
+  font-weight: 300;
+
+  &::before {
+    animation: timing-from-to 5s infinite alternate;
+  }
+}
+
+.percents {
+  font-weight: 300;
+
+  &::before {
+    animation: timing-percents 5s infinite alternate;
+  }
+}
+
+/* Animation-timing-function */
+
+@keyframes timing {
+  50% {
+    left: 100%;
+    margin-left: -6.2em;
+  }
+}
+
+.ease {
+  font-weight: 300;
+
+  &::before {
+    animation: timing 5s infinite;
+    animation-timing-function: ease;
+  }
+}
+
+.linear {
+  font-weight: 300;
+
+  &::before {
+    animation: timing 5s infinite;
+    animation-timing-function: linear;
+  }
+}
+
+.ease-in {
+  font-weight: 300;
+
+  &::before {
+    animation: timing 5s infinite;
+    animation-timing-function: ease-in;
+  }
+}
+
+.ease-out {
+  font-weight: 300;
+
+  &::before {
+    animation: timing 5s infinite;
+    animation-timing-function: ease-out;
+  }
+}
+
+.ease-in-out {
+  font-weight: 300;
+
+  &::before {
+    animation: timing 5s infinite;
+    animation-timing-function: ease-in-out;
   }
 }

@@ -8,20 +8,23 @@ body fieldset {
   width: 100%;
   max-width: 80vw;
   margin: 0 auto 20px auto;
-  /*     margin-bottom: 20px; */
-  text-shadow: 0.05em 0.05em teal;
+  /* text-shadow: 0.05em 0.05em teal; */
   border: solid 1px mediumturquoise;
+  font-weight: 600;
   color: mediumturquoise;
+  cursor: pointer;
 }
 
 body fieldset div {
   position: relative;
   height: 2.5em;
-  margin: 1.5em 1em;
+  margin: 1em;
   padding: 0.2em;
   border: 1px solid mediumturquoise;
   border-radius: 5px;
   font-size: 1.2em;
+  line-height: 1.9em;
+  text-align: center;
 }
 
 body fieldset div::before {
@@ -41,16 +44,12 @@ body fieldset div::before {
   color: #fff;
 }
 
-body fieldset .from-to::before {
-  -webkit-animation: timing-from-to 5s infinite alternate;
-          animation: timing-from-to 5s infinite alternate;
+body fieldset:hover div::before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
-body fieldset .percents::before {
-  -webkit-animation: timing-percents 5s infinite alternate;
-          animation: timing-percents 5s infinite alternate;
-}
-
+/* Steps */
 @-webkit-keyframes timing-from-to {
   from {
     background-color: steelblue;
@@ -60,7 +59,6 @@ body fieldset .percents::before {
     margin-left: -6.2em;
   }
 }
-
 @keyframes timing-from-to {
   from {
     background-color: steelblue;
@@ -117,5 +115,92 @@ body fieldset .percents::before {
     margin-left: -6.2em;
     background: crimson;
   }
+}
+
+.from-to {
+  font-weight: 300;
+}
+
+.from-to::before {
+  -webkit-animation: timing-from-to 5s infinite alternate;
+          animation: timing-from-to 5s infinite alternate;
+}
+
+.percents {
+  font-weight: 300;
+}
+
+.percents::before {
+  -webkit-animation: timing-percents 5s infinite alternate;
+          animation: timing-percents 5s infinite alternate;
+}
+
+/* Animation-timing-function */
+@-webkit-keyframes timing {
+  50% {
+    left: 100%;
+    margin-left: -6.2em;
+  }
+}
+@keyframes timing {
+  50% {
+    left: 100%;
+    margin-left: -6.2em;
+  }
+}
+
+.ease {
+  font-weight: 300;
+}
+
+.ease::before {
+  -webkit-animation: timing 5s infinite;
+          animation: timing 5s infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.linear {
+  font-weight: 300;
+}
+
+.linear::before {
+  -webkit-animation: timing 5s infinite;
+          animation: timing 5s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.ease-in {
+  font-weight: 300;
+}
+
+.ease-in::before {
+  -webkit-animation: timing 5s infinite;
+          animation: timing 5s infinite;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.ease-out {
+  font-weight: 300;
+}
+
+.ease-out::before {
+  -webkit-animation: timing 5s infinite;
+          animation: timing 5s infinite;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.ease-in-out {
+  font-weight: 300;
+}
+
+.ease-in-out::before {
+  -webkit-animation: timing 5s infinite;
+          animation: timing 5s infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */
