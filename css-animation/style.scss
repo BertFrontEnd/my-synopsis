@@ -12,6 +12,22 @@ body {
     color: mediumturquoise;
     cursor: pointer;
 
+    ul {
+      li {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+    }
+
+    span {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
     div {
       position: relative;
       height: 2.5em;
@@ -47,14 +63,20 @@ body {
         animation-play-state: paused;
       }
     }
-
-    span {
-      text-decoration: underline;
-    }
   }
 }
 
+/* ------------------------------------------------ */
+
 /* Keywords */
+
+.from-to {
+  font-weight: 300;
+
+  &::before {
+    animation: timing-from-to 5s infinite alternate;
+  }
+}
 
 @keyframes timing-from-to {
   from {
@@ -63,6 +85,14 @@ body {
   to {
     left: 100%;
     margin-left: -12.2em;
+  }
+}
+
+.percents {
+  font-weight: 300;
+
+  &::before {
+    animation: timing-percents 5s infinite alternate;
   }
 }
 
@@ -87,30 +117,9 @@ body {
   }
 }
 
-.from-to {
-  font-weight: 300;
-
-  &::before {
-    animation: timing-from-to 5s infinite alternate;
-  }
-}
-
-.percents {
-  font-weight: 300;
-
-  &::before {
-    animation: timing-percents 5s infinite alternate;
-  }
-}
+/* ------------------------------------------------ */
 
 /* Animation Timing Function */
-
-@keyframes timing {
-  50% {
-    left: 100%;
-    margin-left: -12.2em;
-  }
-}
 
 .ease {
   font-weight: 300;
@@ -157,14 +166,14 @@ body {
   }
 }
 
-/* Cubic Bezier */
-
-@keyframes cubic {
+@keyframes timing {
   50% {
     left: 100%;
     margin-left: -12.2em;
   }
 }
+
+/* Cubic Bezier */
 
 .cubic-bezier {
   font-weight: 300;
@@ -172,6 +181,13 @@ body {
   &::before {
     animation: cubic 5s infinite;
     animation-timing-function: cubic-bezier(0.24, 1.49, 0.29, -0.48);
+  }
+}
+
+@keyframes cubic {
+  50% {
+    left: 100%;
+    margin-left: -12.2em;
   }
 }
 
@@ -287,4 +303,67 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* ------------------------------------------------ */
+
+/* Animation Direction */
+
+.normal {
+  font-weight: 300;
+
+  &:before {
+    animation: timing-direction 5s infinite;
+    animation-direction: normal;
+    background: yellowgreen;
+    text-shadow: 0.05em 0.05em coral;
+  }
+}
+
+.reverse {
+  font-weight: 300;
+
+  &:before {
+    animation: timing-direction 5s infinite;
+    animation-direction: reverse;
+    background: gold;
+    text-shadow: 0.05em 0.05em coral;
+  }
+}
+
+.alternate {
+  font-weight: 300;
+
+  &:before {
+    animation: timing-direction 5s infinite;
+    animation-direction: alternate;
+    background: orange;
+    text-shadow: 0.05em 0.05em orangered;
+  }
+}
+
+.alternate-reverse {
+  font-weight: 300;
+
+  &:before {
+    animation: timing-direction 5s infinite;
+    animation-direction: alternate-reverse;
+    background: orangered;
+    text-shadow: 0.05em 0.05em firebrick;
+  }
+}
+
+@keyframes timing-direction {
+  100% {
+    left: 100%;
+    margin-left: -12.2em;
+  }
+}
+
+/* ------------------------------------------------ */
+
+/* Animation Play State */
+
+fieldset:hover::before {
+  animation-play-state: running;
 }

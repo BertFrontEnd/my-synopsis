@@ -10,6 +10,54 @@
 
   <body>
     <fieldset>
+      <legend>description</legend>
+      <ul>
+        <li>
+          После&nbsp;<span>@keyframes</span>&nbsp;задается имя анимации, а
+          внутри фигурных скобок — её шаги
+        </li>
+        <li>
+          <span>animation-name</span>&nbsp;используется для задания имени
+          анимации
+        </li>
+        <li>
+          <span>animation-duration</span>&nbsp;управляет длительностью
+          анимации:&nbsp;<span>s | ms</span>
+        </li>
+        <li>
+          <span>animation-timing-function</span>&nbsp;определяет тип
+          анимации:&nbsp;<span
+            >ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier() |
+            step-start/step-end | steps(number)</span
+          >
+        </li>
+        <li>
+          <span>animation-iteration-count</span>&nbsp;управляет повторением
+          анимации:&nbsp;<span>number или infinite</span>
+        </li>
+        <li>
+          <span>animation-direction</span>&nbsp;отвечает за направление
+          анимации:&nbsp;<span
+            >normal | reverse | alternate | alternate-reverse</span
+          >
+        </li>
+        <li>
+          <span>animation-play-state</span>&nbsp;управляет остановкой и
+          проигрыванием анимации: &nbsp;<span>running | paused</span>
+        </li>
+        <li>
+          <span>animation-delay</span>&nbsp;задает задержку анимации перед
+          началом воспроизведения:&nbsp;<span>s | ms</span>
+        </li>
+        <li>
+          <span>animation-fill-mode</span>&nbsp;определяет будет ли анимация
+          воздействовать на элемент вне времени воспроизведения
+          анимации:&nbsp;<span>none | forwards | backwards | both</span>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
       <legend>from to & percents</legend>
       <div data-content="From to" class="from-to">
         Начальное <span>from</span> и конечное <span>to</span> положения
@@ -37,16 +85,23 @@
       <div data-content="Ease in out" class="ease-in-out">
         Более плавное скольжение в середине <span>ease-in-out</span>
       </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>cubic-bezier</legend>
-      <div data-content="Linear" class="linear">
-        <span>linear</span>
-      </div>
       <div data-content="Cubic" class="cubic-bezier">
         <span>cubic-bezier(0.24, 1.49, 0.29, -0.48)</span>
       </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend>animation-timing-function: step-start & step-end</legend>
+      <section>
+        <span></span>
+      </section>
+    </fieldset>
+
+    <fieldset class="steps">
+      <legend>animation-timing-function: steps</legend>
+      <section>
+        <span></span>
+      </section>
     </fieldset>
 
     <fieldset>
@@ -65,18 +120,13 @@
       </div>
     </fieldset>
 
-    <fieldset class="step">
-      <legend>step-start & step-end</legend>
-      <section>
-        <span></span>
-      </section>
-    </fieldset>
-
-    <fieldset class="steps">
-      <legend>steps</legend>
-      <section>
-        <span></span>
-      </section>
+    <fieldset>
+      <legend>animation-play-state</legend>
+      <div data-content="Hover to top" class="linear">
+        Управление остановкой и проигрыванием анимации:&nbsp;<span
+          >running | paused</span
+        >
+      </div>
     </fieldset>
   </body>
 </html>
