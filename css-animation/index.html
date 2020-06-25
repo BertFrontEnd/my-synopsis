@@ -10,12 +10,13 @@
 
   <body>
     <fieldset>
-      <legend>description</legend>
+      <legend>Description</legend>
       <ul>
         <li>
           После&nbsp;<span>@keyframes</span>&nbsp;задается имя анимации, а
           внутри фигурных скобок — её шаги
         </li>
+        <li>- - -</li>
         <li>
           <span>animation-name</span>&nbsp;используется для задания имени
           анимации
@@ -32,8 +33,12 @@
           >
         </li>
         <li>
+          <span>animation-delay</span>&nbsp;задает задержку анимации перед
+          началом воспроизведения:&nbsp;<span>s | ms</span>
+        </li>
+        <li>
           <span>animation-iteration-count</span>&nbsp;управляет повторением
-          анимации:&nbsp;<span>number или infinite</span>
+          анимации:&nbsp;<span>number | infinite</span>
         </li>
         <li>
           <span>animation-direction</span>&nbsp;отвечает за направление
@@ -42,18 +47,49 @@
           >
         </li>
         <li>
-          <span>animation-play-state</span>&nbsp;управляет остановкой и
-          проигрыванием анимации: &nbsp;<span>running | paused</span>
-        </li>
-        <li>
-          <span>animation-delay</span>&nbsp;задает задержку анимации перед
-          началом воспроизведения:&nbsp;<span>s | ms</span>
-        </li>
-        <li>
           <span>animation-fill-mode</span>&nbsp;определяет будет ли анимация
           воздействовать на элемент вне времени воспроизведения
           анимации:&nbsp;<span>none | forwards | backwards | both</span>
         </li>
+        <li>- - -</li>
+        <li>
+          <span>animation-play-state</span>&nbsp;управляет остановкой и
+          проигрыванием анимации: &nbsp;<span>running | paused</span>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <legend>Examples</legend>
+      <ul>
+        <li>
+          animation:&nbsp;<span>
+            animation:&nbsp; name duration timing-function delay iteration-count
+            direction fill-mode; animation:&nbsp;</span
+          >
+        </li>
+        <li>animation-name:&nbsp;<span>timing;</span></li>
+        <li>animation-duration:&nbsp;<span>1s | 1ms;</span></li>
+        <li>
+          animation-timing-function:&nbsp;<span
+            >ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier() |
+            step-start/step-end | steps(number);</span
+          >
+        </li>
+        <li>animation-delay:&nbsp;<span>1s | 1ms;</span></li>
+        <li>animation-iteration-count:&nbsp;<span>number | infinite;</span></li>
+        <li>
+          animation-direction:&nbsp;<span
+            >normal | reverse | alternate | alternate-reverse;</span
+          >
+        </li>
+        <li>
+          animation-fill-mode:&nbsp;<span
+            >none | forwards | backwards | both;</span
+          >
+        </li>
+        <li>- - -</li>
+        <li>animation-play-state:&nbsp;<span>running | paused;</span></li>
       </ul>
     </fieldset>
 
@@ -105,6 +141,19 @@
     </fieldset>
 
     <fieldset>
+      <legend>animation-delay</legend>
+      <div data-content="No delay" class="ease">
+        Анимация проигрывается без задержки
+      </div>
+      <div data-content="1s" class="ease s1">
+        Анимация проигрывается с задержкой на 1 секунду
+      </div>
+      <div data-content="-3s" class="ease s3">
+        Анимация проигрывается с опережение на 3 секунды
+      </div>
+    </fieldset>
+
+    <fieldset>
       <legend>animation-direction</legend>
       <div data-content="Normal" class="normal">
         Анимация проигрывается с начала и до конца
@@ -117,6 +166,24 @@
       </div>
       <div data-content="Alternate-reverse" class="alternate-reverse">
         Анимация проигрывается с конца и до конца, и в обратном направлении
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>animation-fill-mode</legend>
+      <div data-content="None" class="none">
+        Анимация воздействует на элемент только во время воспроизведения, по
+        окончании элемент возвращается в исходное состояние
+      </div>
+      <div data-content="Forwards" class="ease forwards">
+        Анимация воздействует на элемент по окончании воспроизведения
+      </div>
+      <div data-content="Backwards" class="ease backwards">
+        Анимация воздействует на элемент до начала воспроизведения
+      </div>
+      <div data-content="Both" class="ease both">
+        Анимация воздействует на элемент и до начала, и после окончания
+        воспроизведения
       </div>
     </fieldset>
 

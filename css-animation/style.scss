@@ -12,6 +12,10 @@ body {
     color: mediumturquoise;
     cursor: pointer;
 
+    .none {
+      font-weight: 300;
+    }
+
     ul {
       li {
         display: flex;
@@ -307,6 +311,26 @@ body {
 
 /* ------------------------------------------------ */
 
+/* Animation Delay */
+
+.ease {
+  &.s1 {
+    &:before {
+      animation-delay: 1s;
+    }
+  }
+}
+
+.ease {
+  &.s3 {
+    &:before {
+      animation-delay: -3s !important;
+    }
+  }
+}
+
+/* ------------------------------------------------ */
+
 /* Animation Direction */
 
 .normal {
@@ -362,8 +386,32 @@ body {
 
 /* ------------------------------------------------ */
 
-/* Animation Play State */
+/* Animation Fill Mode */
 
-fieldset:hover::before {
-  animation-play-state: running;
+.forwards:before {
+  animation: timing-fill-mode 5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+.backwards:before {
+  animation: timing-fill-mode 5s;
+  animation-delay: 3s;
+  animation-fill-mode: backwards;
+}
+
+.both:before {
+  animation: timing-fill-mode 5s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+}
+
+@keyframes timing-fill-mode {
+  0% {
+    left: -1em;
+  }
+  100% {
+    left: 100%;
+    margin-left: -11.2em;
+  }
 }

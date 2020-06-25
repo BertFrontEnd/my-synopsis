@@ -14,6 +14,10 @@ body fieldset {
   cursor: pointer;
 }
 
+body fieldset .none {
+  font-weight: 300;
+}
+
 body fieldset ul li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -416,6 +420,18 @@ body fieldset:hover div::before {
 }
 
 /* ------------------------------------------------ */
+/* Animation Delay */
+.ease.s1:before {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.ease.s3:before {
+  -webkit-animation-delay: -3s !important;
+          animation-delay: -3s !important;
+}
+
+/* ------------------------------------------------ */
 /* Animation Direction */
 .normal {
   font-weight: 300;
@@ -482,9 +498,51 @@ body fieldset:hover div::before {
 }
 
 /* ------------------------------------------------ */
-/* Animation Play State */
-fieldset:hover::before {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+/* Animation Fill Mode */
+.forwards:before {
+  -webkit-animation: timing-fill-mode 5s;
+          animation: timing-fill-mode 5s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.backwards:before {
+  -webkit-animation: timing-fill-mode 5s;
+          animation: timing-fill-mode 5s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.both:before {
+  -webkit-animation: timing-fill-mode 5s;
+          animation: timing-fill-mode 5s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes timing-fill-mode {
+  0% {
+    left: -1em;
+  }
+  100% {
+    left: 100%;
+    margin-left: -11.2em;
+  }
+}
+
+@keyframes timing-fill-mode {
+  0% {
+    left: -1em;
+  }
+  100% {
+    left: 100%;
+    margin-left: -11.2em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
