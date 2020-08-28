@@ -1,0 +1,181 @@
+%items {
+  .item-1 {
+    font-size: 16px;
+    background-color: #f1c0c0;
+  }
+
+  .item-2 {
+    font-size: 16px;
+    background-color: #c0e5f1;
+  }
+
+  .item-3 {
+    font-size: 16px;
+    background-color: #e9f1c0;
+  }
+}
+
+/* Now Flex */
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  div {
+    font-size: 0;
+  }
+
+  .wrapper-1 {
+    text-align: left;
+    background-color: #b499dd;
+
+    .item {
+      display: inline;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex grow 1-1-1 */
+
+  .wrapper-2 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение свободного пространства
+      flex-grow: 1;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex grow 2-1-1 */
+
+  .wrapper-3 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение свободного пространства
+      flex-grow: 1;
+    }
+
+    .item-1 {
+      // Переопределение свободного пространства первого элемента
+      flex-grow: 2;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex grow 1-1-0*/
+
+  .wrapper-4 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение свободного пространства
+      flex-grow: 1;
+    }
+
+    .item-1 {
+      // Переопределение свободного пространства первого элемента
+      flex-grow: 0;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex shrink 0-1-0*/
+
+  .wrapper-5 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение свободного пространства
+      flex-grow: 1;
+    }
+
+    .item-2 {
+      width: 300px;
+      // Переопределение свободного пространства второго элемента
+      flex-grow: 0;
+      // Применение "коэффициент сжатия" элемента
+      flex-shrink: 1;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex basis 50% */
+
+  .wrapper-6 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение свободного пространства
+      flex-grow: 1;
+    }
+
+    .item-1 {
+      width: 300px;
+      // Переопределение свободного пространства второго элемента
+      flex-grow: 0;
+      // Применение "коэффициент сжатия" элемента
+      flex-shrink: 0;
+      //
+      flex-basis: 50%;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex Auto */
+  /* Flex-элементы с относительными размерами */
+
+  .wrapper-7 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение элементов
+      // flex: 1 1 auto;
+      flex: auto;
+    }
+
+    @extend %items;
+  }
+
+  /* Flex 1 */
+  /* Flex-элементы с абсолютными размерами */
+
+  .wrapper-8 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #b499dd;
+
+    .item {
+      // Одинаковое распределение элементов
+      // flex: 1 1 0%;
+      flex: 1;
+    }
+
+    @extend %items;
+  }
+}

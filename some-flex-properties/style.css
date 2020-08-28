@@ -1,0 +1,187 @@
+@charset "UTF-8";
+body .wrapper-1 .item-1, body .wrapper-2 .item-1, body .wrapper-3 .item-1, body .wrapper-4 .item-1, body .wrapper-5 .item-1, body .wrapper-6 .item-1, body .wrapper-7 .item-1, body .wrapper-8 .item-1 {
+  font-size: 16px;
+  background-color: #f1c0c0;
+}
+
+body .wrapper-1 .item-2, body .wrapper-2 .item-2, body .wrapper-3 .item-2, body .wrapper-4 .item-2, body .wrapper-5 .item-2, body .wrapper-6 .item-2, body .wrapper-7 .item-2, body .wrapper-8 .item-2 {
+  font-size: 16px;
+  background-color: #c0e5f1;
+}
+
+body .wrapper-1 .item-3, body .wrapper-2 .item-3, body .wrapper-3 .item-3, body .wrapper-4 .item-3, body .wrapper-5 .item-3, body .wrapper-6 .item-3, body .wrapper-7 .item-3, body .wrapper-8 .item-3 {
+  font-size: 16px;
+  background-color: #e9f1c0;
+}
+
+/* Now Flex */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Flex grow 1-1-1 */
+  /* Flex grow 2-1-1 */
+  /* Flex grow 1-1-0*/
+  /* Flex shrink 0-1-0*/
+  /* Flex basis 50% */
+  /* Flex Auto */
+  /* Flex-элементы с относительными размерами */
+  /* Flex 1 */
+  /* Flex-элементы с абсолютными размерами */
+}
+
+body div {
+  font-size: 0;
+}
+
+body .wrapper-1 {
+  text-align: left;
+  background-color: #b499dd;
+}
+
+body .wrapper-1 .item {
+  display: inline;
+}
+
+body .wrapper-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-2 .item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body .wrapper-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-3 .item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body .wrapper-3 .item-1 {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+body .wrapper-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-4 .item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body .wrapper-4 .item-1 {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+body .wrapper-5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-5 .item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body .wrapper-5 .item-2 {
+  width: 300px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+body .wrapper-6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-6 .item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body .wrapper-6 .item-1 {
+  width: 300px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+body .wrapper-7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-7 .item {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+body .wrapper-8 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  background-color: #b499dd;
+}
+
+body .wrapper-8 .item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/*# sourceMappingURL=style.css.map */
