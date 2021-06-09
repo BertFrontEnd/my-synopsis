@@ -2,6 +2,7 @@
 const log = console.log;
 
 /* Миксин NonElementParentNode */
+log('---Миксин NonElementParentNode---');
 
 // получаем ссылку на наш список
 const listEl = document.getElementById('list'); // ul#list.list - такая запись означает "элемент `ul` с `id === list`" и таким же `class`
@@ -10,6 +11,7 @@ log(listEl); // ul#list.list
 log(list); // ul#list.list
 
 /* Миксин ParentNode */
+log('---Миксин ParentNode---');
 
 // children — потомки элемента
 const { children } = list; // list.children
@@ -17,11 +19,11 @@ const { children } = list; // list.children
 log(children); // Коллекция HTML, которая представляет собой массивоподобный объект
 
 /*
-  HTMLCollection(3)
+HTMLCollection(3)
   0: li#item1.item
   1: li#item2.item
   2: li#item3.item
-  length: 3
+length: 3
 */
 
 // Преобразование массивоподобного объекта к массиву
@@ -61,14 +63,15 @@ const newItem2 = createEl('item4', 4);
 list.append(newItem2);
 
 log(children); // 5
+
 /*
-  HTMLCollection(5)
+HTMLCollection(5)
   0: li#item0.item
   1: li#item1.item
   2: li#item2.item
   3: li#item3.item
   4: li#item4.item
-  length: 5
+length: 5
 */
 
 // replaceChildren(nodes) — заменяет потомков новыми элементами
@@ -98,6 +101,7 @@ const getEl = (selector, parent = document, single = true) =>
   (в виде обычного массива), совпадающие с селектором, в зависимости от значения
   индикатора
 */
+
 const itemWithId0 = getEl('#item0', list);
 log(itemWithId0); // li#item0.item
 
@@ -105,6 +109,7 @@ const allItems = getEl('.item', list, false);
 log(allItems); // [li#item0.item, li#item4.item]
 
 /* Миксин NonDocumentTypeChildNode */
+log('---Миксин NonDocumentTypeChildNode---');
 
 // previousElementSibling — предыдущий элемент
 // nextElementSibling — следующий элемент
@@ -113,6 +118,7 @@ log(itemWithId0.previousElementSibling); // null
 log(itemWithId0.nextElementSibling); // #item4
 
 /* Миксин ChildNode */
+log('---Миксин ChildNode---');
 
 // before(newNode) — вставляет новый элемент перед текущим
 // after(newNode) — вставляет новый элемент после текущего
@@ -140,11 +146,13 @@ itemWithId0.replaceWith(newItem5);
 itemWithId4.remove();
 
 /* Интерфейс Node */
+log('---Миксин Node---');
 // nodeType — тип узла
 
 log(list.nodeType); // 1
 
 // другие варианты
+
 /*
   1 -> ELEMENT_NODE (элемент)
   3 -> TEXT_NODE (текст)
@@ -159,6 +167,7 @@ log(list.nodeType); // 1
 log(list.nodeName); // UL
 
 // другие варианты
+
 /*
   - квалифицированное название HTML-элемента прописными (заглавными) буквами
   - квалифицированное название атрибута
@@ -186,6 +195,7 @@ log(itemWithId1.parentElement); // #list
 
 log(list.hasChildNodes()); // true
 log(list.childNodes);
+
 /*
 NodeList(3)
   0: li#item1.item
@@ -219,6 +229,7 @@ log(list.textContent); // item123
 // Для извлечения/записи текста существует еще один (устаревший) геттер/сеттер — innerText
 
 // cloneNode(deep) — копирует узел
+
 /*
   Принимает логическое значение, определяющее характер копирования:
   поверхностное — копируется только сам узел,
@@ -274,3 +285,134 @@ list.replaceChild(itemWithIdB, itemWithId1);
 const itemWithId2 = getEl('#item2', list);
 // и удаляем его
 list.removeChild(itemWithId2);
+
+/* Интерфейс Document */
+log('---Интерфейс Document---');
+
+// URL и documentURI — адрес документа
+log(document.URL); // .../index.html
+log(document.documentURI); // .../index.html
+
+// documentElement - возвращает весь html
+log(document.documentElement); // html
+
+// getElementsByTagName(tag) — возвращает все элементы с указанным тегом
+const itemsByTagName = document.getElementsByTagName('li');
+log(itemsByTagName);
+/*
+HTMLCollection(4)
+  0: li##item_a.item
+  1: li#item_b.item
+  2: li#item3.item
+  3: li##item_c.item
+length: 4
+*/
+
+// getElementsByClassName(className) — возвращает все элементы с указанным CSS-классом
+const itemsByClassName = list.getElementsByClassName('item');
+log(itemsByClassName);
+/* 
+HTMLCollection(4)
+  0: li##item_a.item
+  1: li#item_b.item
+  2: li#item3.item
+  3: li##item_c.item
+length: 4
+*/
+
+// createDocumentFragment() — возвращает фрагмент документа:
+
+// создаем фрагмент
+const fragment = document.createDocumentFragment();
+// создаем новый элемент
+const itemWithIdD = createEl('item_d', 'd');
+// добавляем элемент во фрагмент
+fragment.append(itemWithIdD);
+// добавляем фрагмент в список
+list.append(fragment);
+
+// createTextNode(data) — создает текст
+// createComment(data) — создает комментарий
+// importNode(existingNode, deep) — создает новый узел на основе существующего
+
+// создаем новый список на основе существующего
+const newList3 = document.importNode(list, true);
+// вставляем его перед существующим списком
+list.before(newList3);
+// и удаляем во избежание коллизий
+newList3.remove();
+
+// createAttribute(attr) — создает указанный атрибут
+
+/* Интерфейсы NodeIterator и TreeWalker */
+log('---Интерфейсы NodeIterator и TreeWalker---');
+
+// createNodeIterator(root, referenceNode, pointerBeforeReferenceNode, whatToShow, filter)
+const iterator = document.createNodeIterator(list);
+log(iterator);
+log(iterator.nextNode()); // #list
+log(iterator.nextNode()); // #item_a
+log(iterator.previousNode()); // #item_a
+log(iterator.previousNode()); // #list
+log(iterator.previousNode()); // null
+
+// createTreeWalker(root, whatToShow, filter)
+// применяем фильтры - https://dom.spec.whatwg.org/#interface-nodefilter
+const walker = document.createTreeWalker(list, '0x1', { acceptNode: () => 1 });
+log(walker);
+log(walker.parentNode()); // null
+log(walker.firstChild()); // #item_a
+log(walker.lastChild()); // null
+log(walker.previousSibling()); // null
+log(walker.nextSibling()); // #item_b
+log(walker.nextNode()); // #item3
+log(walker.previousNode()); // #item_b
+
+/* Интерфейс Element */
+log('---Интерфейс Element---');
+
+// localName и tagName — название тега
+
+log(list.localName); // ul
+log(list.tagName); // UL
+
+// id — геттер/сеттер для идентификатора
+// className — геттер/сеттер для CSS-класса
+
+log(list.id); // list
+list.id = 'LIST';
+log(LIST.className); // list
+
+// classList — все CSS-классы элемента (объект DOMTokenList)
+
+const button = createEl('button', 'Click me', 'my_button', 'btn btn-primary');
+log(button.classList);
+/*
+DOMTokenList(2)
+  0: "btn"
+  1: "btn-primary"
+length: 2
+value: "btn btn-primary"
+*/
+
+/* Работа с classList */
+log('---Работа с classList---');
+
+// classList.add(newClass) — добавляет новый класс к существующим
+// classList.remove(existingClass) — удаляет указанный класс
+// classList.toggle(className, force?) — удаляет существующий класс или добавляет новый. Если опциональный аргумент force имеет значение true, данный // метод только добавляет новый класс при отсутствии, но не удаляет существующий класс (в этом случае toggle() === add()). Если force имеет значение /// false, данный метод только удаляет существующий класс при наличии, но не добавляет отсутствующий класс (в этом случае toggle() === remove())
+// classList.replace(existingClass, newClass) — заменяет существующий класс (existingClass) на новый (newClass)
+// classList.contains(className) — возвращает true, если указанный класс обнаружен в списке классов элемента (данный метод идентичен className.includes(className)
+
+// добавляем к кнопке новый класс
+button.classList.add('btn-lg');
+// удаляем существующий класс
+button.classList.remove('btn-primary');
+// у кнопки есть класс `btn-lg`, поэтому он удаляется
+button.classList.toggle('btn-lg');
+// заменяем существующий класс на новый
+button.classList.replace('btn', 'btn-success');
+
+log(button.className); // btn-success
+log(button.classList.contains('btn')); // false
+log(button.className.includes('btn-success')); // true
